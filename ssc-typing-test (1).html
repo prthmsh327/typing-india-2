@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSC Typing Test 2025 – Free SSC CHSL CGL Typing Practice | TypingTestIndia</title>
+<meta name="description" content="Free SSC CHSL and SSC CGL typing test practice 2025. Practice with SSC-style English passages. Target 35 WPM for LDC post and 15000 KDPH for DEO post. Real exam format.">
+<meta name="keywords" content="SSC typing test 2025, SSC CHSL typing practice, SSC CGL DEO typing, SSC LDC typing test, SSC typing speed 35 WPM, SSC CHSL typing preparation">
+<link rel="canonical" href="https://typingtestindia.in/ssc-typing-test.html">
+<link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SSC Typing Test 2025 – Free SSC CHSL & CGL Practice | TypingTestIndia">
+  <meta property="og:description" content="Free SSC CHSL and CGL typing test 2025. SSC-style passages. Target 35 WPM for LDC, 15000 KDPH for DEO. Real exam format.">
+  <meta property="og:url" content="https://typingtestindia.in/ssc-typing-test.html">
+  <meta property="og:site_name" content="TypingTestIndia">
+  <meta property="og:image" content="https://typingtestindia.in/og-image.png">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SSC Typing Test 2025 – Free SSC CHSL & CGL Practice | TypingTestIndia">
+  <meta name="twitter:description" content="Free SSC CHSL and CGL typing test 2025. SSC-style passages. Target 35 WPM for LDC, 15000 KDPH for DEO. Real exam format.">
+  <meta name="twitter:image" content="https://typingtestindia.in/og-image.png">
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your real Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo"><em>T</em>ypingTest<em>India</em></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="cpct-exam-simulator.html">CPCT Sim</a></li>
+    <li><a href="government-typing-test.html">Gov Jobs</a></li>
+    <li><a href="ssc-typing-test.html" class="active">SSC</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="badge">📄 SSC CHSL · SSC CGL · DEO Practice</div>
+  <h1>SSC TYPING <em>TEST</em></h1>
+  <p>Practice with SSC-style passages. Target 35 WPM for CHSL LDC · 15,000 KDPH (≈50 WPM) for CGL DEO.</p>
+</div>
+
+<div class="mode-bar">
+  <button class="mode-btn on" id="chslBtn" onclick="setExam('chsl',this)">SSC CHSL (LDC) — 35 WPM</button>
+  <button class="mode-btn" id="deoBtn" onclick="setExam('deo',this)">SSC CGL (DEO) — 50 WPM</button>
+</div>
+
+<div class="test-wrap">
+  <div class="cpct-banner">
+    <span class="cpct-badge" id="examBadge">SSC CHSL</span>
+    <div id="examInfo">
+      <strong style="color:var(--text)">SSC CHSL LDC:</strong> 35 WPM in English or 30 WPM in Hindi · 10 minutes typing test<br>
+      <span style="font-size:.8rem">No penalty formula — errors reduce your accuracy score but don't deduct from WPM directly.</span>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="time-btns">
+      <button class="time-btn" onclick="setTime(300,this)">5 Min</button>
+      <button class="time-btn on" onclick="setTime(600,this)">10 Min (Actual)</button>
+      <button class="time-btn" onclick="setTime(900,this)">15 Min</button>
+    </div>
+    <div style="font-size:.8rem;color:var(--muted2)">Passage <span id="passNum">1</span> / <span id="passTotal">4</span></div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-val timer" id="timerDisplay">10:00</div><div class="stat-label">Time Left</div></div>
+    <div class="stat"><div class="stat-val" id="wpmDisplay">0</div><div class="stat-label">WPM</div></div>
+    <div class="stat"><div class="stat-val" id="kdphDisplay">0</div><div class="stat-label">KDPH</div></div>
+    <div class="stat"><div class="stat-val" style="color:var(--text)" id="accDisplay">100%</div><div class="stat-label">Accuracy</div></div>
+    <div class="stat"><div class="stat-val" style="color:var(--red)" id="errDisplay">0</div><div class="stat-label">Errors</div></div>
+    <div class="stat"><div class="stat-val" id="statusDisplay" style="color:var(--muted2);font-size:1rem">—</div><div class="stat-label">Status</div></div>
+  </div>
+
+  <div class="progress-wrap"><div class="progress-fill" id="progressBar"></div></div>
+
+  <div class="typing-box" id="typingBox" onclick="focusInput()" style="min-height:150px">
+    <input type="text" id="hiddenInput" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <div id="wordDisplay" style="font-size:1.05rem;line-height:2.1"></div>
+    <div class="start-msg" id="startMsg">Click here to start SSC typing practice · <span>Space</span> = next word · <span>Tab</span> = restart</div>
+  </div>
+
+  <div style="display:flex;gap:.8rem;justify-content:center;margin-top:1.2rem;flex-wrap:wrap">
+    <button class="reset-btn" onclick="resetTest()">↻ New Passage</button>
+    <button class="nav-btn" onclick="nextPassage()">→ Next Passage</button>
+  </div>
+</div>
+
+<!-- RESULT -->
+<div class="result-overlay" id="resultOverlay">
+  <div class="result-card">
+    <div class="result-title">SSC PRACTICE RESULT</div>
+    <div class="result-wpm" id="resultWPM">0</div>
+    <div class="result-wpm-label">Words Per Minute</div>
+    <div class="result-grid">
+      <div class="result-stat"><div class="result-stat-val" id="rKDPH">0</div><div class="result-stat-label">KDPH</div></div>
+      <div class="result-stat"><div class="result-stat-val" id="rAcc">0%</div><div class="result-stat-label">Accuracy</div></div>
+      <div class="result-stat"><div class="result-stat-val" id="rErrors">0</div><div class="result-stat-label">Errors</div></div>
+    </div>
+    <div id="resultAdvice" style="border-radius:8px;padding:.9rem;font-size:.84rem;margin:1rem 0;line-height:1.6;font-weight:600"></div>
+    <button class="retry-btn" onclick="resetTest();closeResult()">Practice Again</button>
+  </div>
+</div>
+
+<div class="content">
+  <h2>SSC CHSL TYPING TEST FORMAT</h2>
+  <p>SSC CHSL (Combined Higher Secondary Level) Skill Test for LDC (Lower Division Clerk) posts requires a typing speed of <span class="highlight">35 WPM in English</span> or <span class="highlight">30 WPM in Hindi</span>. The test duration is 10 minutes. Unlike CPCT, SSC does not apply a penalty for errors — instead, accuracy is assessed separately and candidates with very low accuracy may be disqualified.</p>
+  <p>The typing test in SSC is qualifying in nature for most posts — you need to clear it to proceed, but ranks are determined by the written exam score.</p>
+
+  <h2>SSC CGL DEO TYPING FORMAT</h2>
+  <p>SSC CGL Data Entry Operator posts require <span class="highlight">15,000 Key Depressions Per Hour (KDPH)</span> in English only. This is approximately 50 WPM. The test is conducted on a computer with actual data entry software. Practice by targeting 50+ WPM in our Hard difficulty mode.</p>
+
+  <h2>FREQUENTLY ASKED QUESTIONS</h2>
+  <details><summary>How is SSC CHSL typing test different from CPCT?</summary><div class="faq-body">SSC CHSL does not use a penalty formula like CPCT. Your gross WPM is your final score. SSC assesses accuracy separately — extremely low accuracy can disqualify you, but there's no WPM deduction per error. This makes SSC more forgiving than CPCT for candidates who make occasional mistakes.</div></details>
+  <details><summary>Can I use Hindi typing for SSC CHSL?</summary><div class="faq-body">Yes. SSC CHSL allows either English (35 WPM) or Hindi (30 WPM) typing. The choice is made at the time of application. Note that the Hindi test uses Inscript keyboard layout. If you are comfortable with Hindi Inscript, the lower WPM threshold (30 vs 35) can be an advantage.</div></details>
+  <details><summary>Is the SSC typing test conducted online or offline?</summary><div class="faq-body">The SSC Skill Test (typing) is conducted at SSC regional offices on dedicated computer terminals. It is not taken online from home. The computer setup, keyboard, and software are provided by SSC. Practice on a standard QWERTY keyboard for best preparation.</div></details>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="cpct-exam-simulator.html">CPCT Simulator</a>
+    <a href="government-typing-test.html">All Gov Exams</a>
+    <a href="hindi-typing-test.html">Hindi Test</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+  <p class="footer-copy">© 2025 TypingTestIndia · Not affiliated with Staff Selection Commission or any government body</p>
+</footer>
+
+<script>
+const passages = {
+  chsl: [
+    "The Staff Selection Commission conducts various competitive examinations for recruitment to different posts in the central government departments and offices. The Combined Higher Secondary Level examination is conducted for recruitment to posts of Lower Division Clerk Data Entry Operator Postal Assistant and Sorting Assistant. Candidates who qualify the written examination are required to appear for a skill test which includes a typing test at a prescribed speed. The typing test is qualifying in nature and candidates must achieve the minimum required speed to be considered for appointment.",
+    "India has made significant strides in the field of digital governance over the past decade. The Digital India initiative launched by the government has transformed the delivery of public services through technology. Citizens can now access a wide range of government services online without visiting government offices. The use of Aadhaar for identity verification has simplified processes like bank account opening obtaining government subsidies and filing income tax returns. Mobile governance applications have made it easier for people in rural areas to access government services.",
+    "The Right to Information Act passed in the year two thousand and five has empowered citizens to seek information from government departments and public authorities. Under this act any citizen can file a request to obtain information from any public authority within thirty days. The act has played an important role in promoting transparency and accountability in government functioning. Thousands of RTI applications are filed every year across the country and have led to exposure of corruption and improvement in government services.",
+    "India has one of the largest civil services in the world with millions of government employees working across central state and local government bodies. The civil services are broadly divided into All India Services which include the Indian Administrative Service and Indian Police Service and Central Services which include various technical and non technical services. State governments have their own public service commissions which recruit officers for state level positions. The selection process typically involves written examinations followed by interviews and skill tests."
+  ],
+  deo: [
+    "The economic development of a nation depends significantly upon the efficiency of its administrative and financial systems. Modern economies require sophisticated data management systems to process vast amounts of financial information accurately and efficiently. Data entry operators play a crucial role in maintaining the integrity of government records financial transactions and administrative databases. The accuracy and speed of data entry directly impacts the quality of decisions made by policy makers and administrators at various levels of government.",
+    "Information technology has revolutionized the functioning of government departments across India. The introduction of computerized systems has replaced manual record keeping with digital databases that can be accessed and updated in real time. Central government departments have implemented enterprise resource planning systems to integrate financial personnel and administrative functions. The National Informatics Centre provides technology infrastructure and support to government departments enabling them to deliver services more efficiently to citizens.",
+    "The Goods and Services Tax implemented in July two thousand seventeen represents one of the most significant tax reforms in independent India. This unified indirect tax system replaced a complex structure of central and state taxes with a single integrated tax applied throughout the supply chain. The GST network processes millions of invoices and tax returns every month requiring a large number of data entry professionals to maintain accurate records. The system has improved tax compliance and increased government revenue while reducing the compliance burden on businesses."
+  ]
+};
+
+let exam='chsl', passIdx=0;
+let words=[], ci=0, chi=0, started=false, finished=false, tmr=null;
+let tLeft=600, tTotal=600, cc=0, tc=0, errs=0, keystrokes=0;
+const targets={chsl:35,deo:50};
+
+function setExam(e,btn){
+  document.querySelectorAll('.mode-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');exam=e;passIdx=0;
+  const badge=document.getElementById('examBadge');
+  const info=document.getElementById('examInfo');
+  if(e==='chsl'){
+    badge.textContent='SSC CHSL';
+    info.innerHTML='<strong style="color:var(--text)">SSC CHSL LDC:</strong> 35 WPM in English or 30 WPM in Hindi · 10 minutes typing test<br><span style="font-size:.8rem">No penalty formula — errors reduce accuracy but not WPM directly.</span>';
+  } else {
+    badge.textContent='SSC CGL DEO';
+    info.innerHTML='<strong style="color:var(--text)">SSC CGL DEO:</strong> 15,000 KDPH (~50 WPM) in English · 15 minutes<br><span style="font-size:.8rem">Key Depressions Per Hour measures every keystroke including spaces.</span>';
+  }
+  resetTest();
+}
+
+function loadPassage(){
+  const list=passages[exam];
+  document.getElementById('passNum').textContent=passIdx+1;
+  document.getElementById('passTotal').textContent=list.length;
+  words=list[passIdx].split(' ').filter(w=>w.length>0);
+  render();
+}
+
+function render(){
+  document.getElementById('wordDisplay').innerHTML=words.map((w,wi)=>
+    `<span class="word${wi===0?' current':''}" id="w${wi}">${
+      [...w].map((c,cj)=>`<span class="char${wi===0&&cj===0?' cursor':''}" id="c${wi}-${cj}">${c}</span>`).join('')
+    }</span>`
+  ).join(' ');
+}
+
+const inp=document.getElementById('hiddenInput');
+function focusInput(){inp.focus();document.getElementById('typingBox').classList.add('active');}
+document.addEventListener('keypress',e=>{if(!started&&!finished)focusInput();});
+
+inp.addEventListener('keydown',e=>{
+  if(finished)return;
+  if(e.key==='Tab'){e.preventDefault();resetTest();return;}
+  if(e.key===' '){e.preventDefault();if(started)nxtWord();return;}
+  if(e.key==='Backspace'){e.preventDefault();doBksp();return;}
+  if(!started&&e.key.length===1)startT();
+  if(started&&e.key.length===1){typeC(e.key);keystrokes++;}
+});
+
+function typeC(ch){
+  const w=words[ci];const wc=[...w];if(chi>=wc.length)return;
+  const el=document.getElementById(`c${ci}-${chi}`);if(!el)return;
+  tc++;if(ch===wc[chi]){el.classList.add('correct');cc++;}else{el.classList.add('wrong');errs++;}
+  el.classList.remove('cursor');chi++;
+  const nx=document.getElementById(`c${ci}-${chi}`);
+  if(nx){document.querySelectorAll('.char.cursor').forEach(e=>e.classList.remove('cursor'));nx.classList.add('cursor');}
+  upd();
+}
+
+function doBksp(){
+  if(chi===0)return;chi--;
+  const el=document.getElementById(`c${ci}-${chi}`);if(!el)return;
+  if(el.classList.contains('wrong'))errs=Math.max(0,errs-1);
+  el.classList.remove('correct','wrong');
+  document.querySelectorAll('.char.cursor').forEach(e=>e.classList.remove('cursor'));
+  el.classList.add('cursor');tc=Math.max(0,tc-1);upd();
+}
+
+function nxtWord(){
+  if(ci>=words.length-1){endT();return;}
+  document.getElementById(`w${ci}`)?.classList.remove('current');ci++;chi=0;
+  document.getElementById(`w${ci}`)?.classList.add('current');
+  document.querySelectorAll('.char.cursor').forEach(e=>e.classList.remove('cursor'));
+  document.getElementById(`c${ci}-0`)?.classList.add('cursor');inp.value='';
+}
+
+function startT(){
+  if(started)return;started=true;document.getElementById('startMsg').style.display='none';
+  tmr=setInterval(()=>{
+    tLeft--;const m=Math.floor(tLeft/60),s=tLeft%60;
+    document.getElementById('timerDisplay').textContent=`${m}:${s.toString().padStart(2,'0')}`;
+    document.getElementById('progressBar').style.width=((tTotal-tLeft)/tTotal*100)+'%';
+    upd();if(tLeft<=0)endT();
+    if(tLeft<=60)document.getElementById('timerDisplay').style.color='var(--red)';
+  },1000);
+}
+
+function upd(){
+  const elapsed=Math.max((tTotal-tLeft)/60,0.016);
+  const wpm=Math.round(cc/5/elapsed);
+  const kdph=Math.round(keystrokes/elapsed*60);
+  const acc=tc>0?Math.round(cc/tc*100):100;
+  const t=targets[exam];
+  document.getElementById('wpmDisplay').textContent=wpm||0;
+  document.getElementById('kdphDisplay').textContent=kdph||0;
+  document.getElementById('accDisplay').textContent=acc+'%';
+  document.getElementById('errDisplay').textContent=errs;
+  if(started){
+    const pass=wpm>=t;
+    const ls=document.getElementById('statusDisplay');
+    ls.textContent=pass?'✅ Pass':'❌ Below';ls.style.color=pass?'var(--teal)':'var(--red)';
+  }
+}
+
+function endT(){
+  finished=true;clearInterval(tmr);
+  const elapsed=tTotal/60;
+  const wpm=Math.round(cc/5/elapsed);
+  const kdph=Math.round(keystrokes/elapsed*60);
+  const acc=tc>0?Math.round(cc/tc*100):100;
+  const t=targets[exam];const pass=wpm>=t;
+  document.getElementById('resultWPM').textContent=wpm;
+  document.getElementById('rKDPH').textContent=kdph;
+  document.getElementById('rAcc').textContent=acc+'%';
+  document.getElementById('rErrors').textContent=errs;
+  const adv=document.getElementById('resultAdvice');
+  if(pass){
+    adv.style.background='var(--teal-dim)';adv.style.border='1px solid rgba(0,201,167,.2)';adv.style.color='var(--teal)';
+    adv.textContent=`✅ You meet the ${exam==='chsl'?'SSC CHSL LDC (35 WPM)':'SSC CGL DEO (15,000 KDPH)'} typing requirement! Your score: ${wpm} WPM / ${kdph} KDPH with ${acc}% accuracy.`;
+  } else {
+    adv.style.background='rgba(255,92,92,.07)';adv.style.border='1px solid rgba(255,92,92,.2)';adv.style.color='#ff8a8a';
+    adv.textContent=`Gap: ${Math.max(0,t-wpm)} more WPM needed for ${exam==='chsl'?'SSC CHSL':'SSC CGL DEO'}. Current: ${wpm} WPM. Target: ${t} WPM. Keep practising with Medium and Hard difficulty.`;
+  }
+  setTimeout(()=>document.getElementById('resultOverlay').classList.add('show'),400);
+}
+
+function closeResult(){document.getElementById('resultOverlay').classList.remove('show');}
+function resetTest(){
+  clearInterval(tmr);started=false;finished=false;ci=0;chi=0;cc=0;tc=0;errs=0;keystrokes=0;tLeft=tTotal;
+  const m=Math.floor(tTotal/60),s=tTotal%60;
+  document.getElementById('timerDisplay').textContent=`${m}:${s.toString().padStart(2,'0')}`;
+  document.getElementById('timerDisplay').style.color='var(--yellow)';
+  ['wpmDisplay','kdphDisplay','errDisplay'].forEach(id=>document.getElementById(id).textContent='0');
+  document.getElementById('accDisplay').textContent='100%';
+  document.getElementById('statusDisplay').textContent='—';document.getElementById('statusDisplay').style.color='var(--muted2)';
+  document.getElementById('progressBar').style.width='0%';
+  document.getElementById('startMsg').style.display='block';
+  document.getElementById('typingBox').classList.remove('active');
+  inp.value='';closeResult();loadPassage();
+}
+function nextPassage(){passIdx=(passIdx+1)%passages[exam].length;resetTest();}
+function setTime(t,btn){document.querySelectorAll('.time-btn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');tTotal=t;resetTest();}
+loadPassage();
+</script>
+</body>
+</html>

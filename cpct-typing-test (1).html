@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPCT Typing Test Practice 2025 – Free CPCT Exam Prep | TypingTestIndia</title>
+<meta name="description" content="Free CPCT typing test practice 2025. Practice with CPCT-style English passages. Check your WPM and accuracy for Madhya Pradesh CPCT exam. 30 WPM target.">
+<meta name="keywords" content="CPCT typing test, CPCT exam preparation, CPCT typing practice 2025, MP CPCT typing, CPCT English typing, CPCT 30 WPM practice">
+<link rel="canonical" href="https://typingtestindia.in/cpct-typing-test.html">
+<link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CPCT Typing Test Practice 2025 – Free CPCT Exam Prep | TypingTestIndia">
+  <meta property="og:description" content="Free CPCT typing test practice 2025. CPCT-style English & Hindi passages. Check WPM and accuracy. 30 WPM target.">
+  <meta property="og:url" content="https://typingtestindia.in/cpct-typing-test.html">
+  <meta property="og:site_name" content="TypingTestIndia">
+  <meta property="og:image" content="https://typingtestindia.in/og-image.png">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CPCT Typing Test Practice 2025 – Free CPCT Exam Prep | TypingTestIndia">
+  <meta name="twitter:description" content="Free CPCT typing test practice 2025. CPCT-style English & Hindi passages. Check WPM and accuracy. 30 WPM target.">
+  <meta name="twitter:image" content="https://typingtestindia.in/og-image.png">
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your real Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo"><em>T</em>ypingTest<em>India</em></a>
+  <ul class="nav-links">
+    <li><a href="index.html">English</a></li>
+    <li><a href="hindi-typing-test.html">Hindi</a></li>
+    <li><a href="cpct-typing-test.html" class="active">CPCT Prep</a></li>
+    <li><a href="results.html">Leaderboard</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <h1>CPCT <em>TYPING</em> PREP</h1>
+  <p>Practice with real CPCT-style passages. Target: 30 WPM English · 20 WPM Hindi · 85% accuracy.</p>
+</div>
+
+<div class="mode-bar">
+  <button class="mode-btn on" id="engBtn" onclick="setLang('english',this)">🇬🇧 English Passages</button>
+  <button class="mode-btn" id="hinBtn" onclick="setLang('hindi',this)">🇮🇳 Hindi Passages</button>
+</div>
+
+<div class="test-wrap">
+  <div class="cpct-banner">
+    <span class="cpct-badge">CPCT 2025</span>
+    <span>CPCT exam is conducted by MP government. English: <strong>30 WPM</strong> · Hindi: <strong>20 WPM</strong> · Accuracy: <strong>85%+</strong> required to qualify.</span>
+  </div>
+
+  <div class="controls">
+    <div class="time-btns">
+      <button class="time-btn on" onclick="setTime(300,this)">5 Min</button>
+      <button class="time-btn" onclick="setTime(600,this)">10 Min</button>
+      <button class="time-btn" onclick="setTime(900,this)">15 Min</button>
+    </div>
+    <div style="font-size:.8rem;color:var(--muted2)">Passage <span id="passageNum">1</span> of <span id="passageTotal">5</span></div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-val timer" id="timerDisplay">5:00</div>
+      <div class="stat-label">Time Left</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val" id="wpmDisplay">0</div>
+      <div class="stat-label">WPM</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val acc" id="accDisplay">100%</div>
+      <div class="stat-label">Accuracy</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val" id="errDisplay" style="color:var(--red)">0</div>
+      <div class="stat-label">Errors</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val" id="statusDisplay" style="font-size:1rem;color:var(--muted2)">—</div>
+      <div class="stat-label">CPCT Status</div>
+    </div>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-fill" id="progressBar"></div>
+  </div>
+
+  <div class="typing-box" id="typingBox" onclick="focusInput()" style="min-height:140px">
+    <input type="text" id="hiddenInput" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <div id="wordDisplay" style="font-size:1.05rem;line-height:2.1"></div>
+    <div class="start-msg" id="startMsg">Click here or press any key to start the CPCT practice test · <span>Space</span> to move to next word</div>
+  </div>
+
+  <div style="display:flex;gap:.8rem;justify-content:center;margin-top:1.2rem;flex-wrap:wrap">
+    <button onclick="resetTest()" style="font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:600;padding:.55rem 1.4rem;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--muted2);cursor:pointer;transition:all .18s" onmouseover="this.style.borderColor='var(--teal)';this.style.color='var(--teal)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted2)'">
+      ↻ New Passage
+    </button>
+    <button onclick="nextPassage()" style="font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:600;padding:.55rem 1.4rem;border-radius:8px;border:1px solid rgba(74,144,226,.3);background:rgba(74,144,226,.08);color:var(--blue);cursor:pointer;transition:all .18s">
+      → Next Passage
+    </button>
+  </div>
+</div>
+
+<!-- RESULT OVERLAY -->
+<div class="result-overlay" id="resultOverlay">
+  <div class="result-card">
+    <div class="result-title">CPCT Practice Result</div>
+    <div class="result-wpm" id="resultWPM">0</div>
+    <div class="result-wpm-label">Words Per Minute</div>
+    <div class="result-grid">
+      <div class="result-stat">
+        <div class="result-stat-val" id="resultAcc">0%</div>
+        <div class="result-stat-label">Accuracy</div>
+      </div>
+      <div class="result-stat">
+        <div class="result-stat-val" id="resultErrors">0</div>
+        <div class="result-stat-label">Errors</div>
+      </div>
+      <div class="result-stat">
+        <div class="result-stat-val" id="resultStatus">—</div>
+        <div class="result-stat-label">CPCT Result</div>
+      </div>
+    </div>
+    <div id="resultRating" style="border-radius:8px;padding:.85rem;font-size:.85rem;margin-bottom:1.2rem;font-weight:600;line-height:1.5"></div>
+    <button class="retry-btn" onclick="resetTest();closeResult()">Practice Again</button>
+  </div>
+</div>
+
+<!-- SEO CONTENT -->
+<div class="content">
+  <h2>WHAT IS CPCT?</h2>
+  <p>CPCT (Computer Proficiency Certification Test) is conducted by the Madhya Pradesh Agency for Promotion of Information Technology (MAP_IT) for assessing the computer skills of candidates for government posts in Madhya Pradesh. Clearing CPCT is mandatory for many Group B and Group C government jobs in MP.</p>
+  <p>The typing component of CPCT tests your ability to type English or Hindi text accurately within a time limit. The standard requires <span class="highlight">30 WPM in English</span> or <span class="highlight">20 WPM in Hindi</span> with a minimum accuracy of <span class="highlight">85%</span>.</p>
+
+  <h2>CPCT EXAM PATTERN 2025</h2>
+  <p><strong>Duration:</strong> 2 hours total (Computer knowledge + Typing)</p>
+  <p><strong>Typing test duration:</strong> 15 minutes per language</p>
+  <p><strong>Scoring:</strong> Gross speed minus penalty for errors = Net speed</p>
+  <p><strong>Penalty:</strong> Each error deducts 0.5 WPM from gross speed</p>
+  <p><strong>Keyboard:</strong> English — standard QWERTY. Hindi — Inscript layout, Mangal font</p>
+  <p><strong>Pass criteria:</strong> Minimum net speed AND minimum 85% accuracy — both must be met</p>
+
+  <h2>CPCT Preparation Tips</h2>
+  <p>Practice daily for 30–45 minutes using passages similar to actual CPCT content. Focus on accuracy over speed — a single error in CPCT carries a 0.5 WPM penalty. Use this test's 5-minute and 15-minute modes to simulate actual exam pressure. Review your most common error patterns after each test.</p>
+
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-wrap">
+    <details>
+      <summary>How many times can I appear for CPCT exam?</summary>
+      <div class="faq-body">There is no limit on the number of attempts for the CPCT exam. You can appear as many times as needed. The exam is conducted multiple times a year by MAP_IT. Your best valid score (within validity period) is considered for government job applications.</div>
+    </details>
+    <details>
+      <summary>What is the validity of CPCT certificate?</summary>
+      <div class="faq-body">A CPCT certificate is valid for 7 years from the date of issue. After 7 years, you need to appear again to renew your certification if you want to apply for government jobs requiring CPCT clearance.</div>
+    </details>
+    <details>
+      <summary>Is CPCT required for all MP government jobs?</summary>
+      <div class="faq-body">CPCT is mandatory for Group B and Group C posts in Madhya Pradesh state government that involve computer usage. It is typically required for positions like Assistant Grade, Data Entry Operator, Clerk, and similar posts across all MP government departments.</div>
+    </details>
+    <details>
+      <summary>Can I practice on a phone or tablet?</summary>
+      <div class="faq-body">We recommend practicing on a desktop or laptop computer only — specifically the same type of keyboard you will use in the actual CPCT exam. Mobile typing is fundamentally different from keyboard typing and will not help your CPCT preparation.</div>
+    </details>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">English Test</a>
+    <a href="hindi-typing-test.html">Hindi Test</a>
+    <a href="cpct-typing-test.html">CPCT Prep</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+  <p class="footer-copy">© 2025 TypingTestIndia · CPCT Practice · Not affiliated with MAP_IT or MP Government</p>
+</footer>
+
+<script>
+const passages = {
+  english: [
+    "India is a land of diversity where people of different religions languages and cultures live together in harmony. The country has a rich history spanning thousands of years and has contributed greatly to the world in the fields of mathematics science philosophy and arts. Today India is one of the fastest growing economies in the world with a strong focus on technology and innovation.",
+    "The Constitution of India came into effect on January twenty sixth nineteen fifty and established India as a sovereign socialist secular democratic republic. It guarantees fundamental rights to all citizens including the right to equality right to freedom right against exploitation right to freedom of religion cultural and educational rights and the right to constitutional remedies.",
+    "Agriculture is the backbone of the Indian economy and provides livelihood to a large portion of the population. The Green Revolution of the nineteen sixties and seventies transformed Indian agriculture and made the country self sufficient in food grain production. Today Indian farmers use modern techniques and technology to increase productivity and reduce crop losses.",
+    "Information technology has revolutionized the way people work communicate and access information across the globe. India has emerged as a major hub for software development and information technology services with cities like Bangalore Hyderabad and Pune becoming world renowned technology centers. Indian software professionals are highly respected globally for their technical skills and work ethic.",
+    "The Indian education system is one of the largest in the world with millions of students enrolled in schools colleges and universities. The government has taken several initiatives to improve the quality of education and increase enrollment rates particularly among girls and children from disadvantaged communities. Digital education platforms have made quality learning accessible to students in remote areas."
+  ],
+  hindi: [
+    "भारत एक विविधताओं से भरा देश है जहाँ विभिन्न धर्मों भाषाओं और संस्कृतियों के लोग मिलकर रहते हैं। देश का इतिहास हजारों वर्षों पुराना है और इसने गणित विज्ञान दर्शन और कला के क्षेत्रों में विश्व में महत्वपूर्ण योगदान दिया है।",
+    "भारत का संविधान छब्बीस जनवरी उन्नीस सौ पचास को लागू हुआ था। यह संविधान भारत को एक संप्रभु समाजवादी धर्मनिरपेक्ष लोकतांत्रिक गणराज्य के रूप में स्थापित करता है। संविधान सभी नागरिकों को मौलिक अधिकारों की गारंटी देता है।",
+    "कृषि भारतीय अर्थव्यवस्था की रीढ़ है और बड़ी संख्या में लोगों को आजीविका प्रदान करती है। हरित क्रांति ने भारतीय कृषि को बदल दिया और देश को खाद्यान्न उत्पादन में आत्मनिर्भर बनाया। आज किसान उत्पादकता बढ़ाने के लिए आधुनिक तकनीकों का उपयोग करते हैं।"
+  ]
+};
+
+let lang = 'english';
+let passageIndex = 0;
+let words = [], currentWordIndex = 0, currentCharIndex = 0;
+let started = false, finished = false, timer = null;
+let timeLeft = 300, totalTime = 300;
+let correctChars = 0, totalChars = 0, errors = 0;
+
+function setLang(l, btn) {
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  lang = l;
+  passageIndex = 0;
+  resetTest();
+}
+
+function loadPassage() {
+  const list = passages[lang];
+  document.getElementById('passageNum').textContent = passageIndex + 1;
+  document.getElementById('passageTotal').textContent = list.length;
+  words = list[passageIndex].split(' ').filter(w => w.length > 0);
+  renderWords();
+}
+
+function renderWords() {
+  document.getElementById('wordDisplay').innerHTML = words.map((w, wi) =>
+    `<span class="word${wi===0?' current':''}" id="word-${wi}">${
+      [...w].map((c,ci)=>`<span class="char${wi===0&&ci===0?' cursor':''}" id="c-${wi}-${ci}">${c}</span>`).join('')
+    }</span>`
+  ).join(' ');
+}
+
+const hiddenInput = document.getElementById('hiddenInput');
+function focusInput() { hiddenInput.focus(); document.getElementById('typingBox').classList.add('active'); }
+document.addEventListener('keypress', e => { if (!started && !finished) focusInput(); });
+
+hiddenInput.addEventListener('keydown', e => {
+  if (finished) return;
+  if (e.key === 'Tab') { e.preventDefault(); resetTest(); return; }
+  if (e.key === ' ') { e.preventDefault(); if (started) nextWord(); return; }
+  if (e.key === 'Backspace') { e.preventDefault(); handleBackspace(); return; }
+  if (!started && e.key.length === 1) startTest();
+  if (started && e.key.length === 1) typeChar(e.key);
+});
+
+function typeChar(char) {
+  const word = words[currentWordIndex];
+  const chars = [...word];
+  if (currentCharIndex >= chars.length) return;
+  const el = document.getElementById(`c-${currentWordIndex}-${currentCharIndex}`);
+  if (!el) return;
+  totalChars++;
+  if (char === chars[currentCharIndex]) { el.classList.add('correct'); correctChars++; }
+  else { el.classList.add('wrong'); errors++; }
+  el.classList.remove('cursor');
+  currentCharIndex++;
+  const next = document.getElementById(`c-${currentWordIndex}-${currentCharIndex}`);
+  if (next) { document.querySelectorAll('.char.cursor').forEach(e=>e.classList.remove('cursor')); next.classList.add('cursor'); }
+  updateStats();
+}
+
+function handleBackspace() {
+  if (currentCharIndex===0) return;
+  currentCharIndex--;
+  const el = document.getElementById(`c-${currentWordIndex}-${currentCharIndex}`);
+  if (!el) return;
+  if (el.classList.contains('wrong')) errors=Math.max(0,errors-1);
+  el.classList.remove('correct','wrong');
+  document.querySelectorAll('.char.cursor').forEach(e=>e.classList.remove('cursor'));
+  el.classList.add('cursor');
+  totalChars=Math.max(0,totalChars-1);
+  updateStats();
+}
+
+function nextWord() {
+  if (currentWordIndex >= words.length - 1) { endTest(); return; }
+  document.getElementById(`word-${currentWordIndex}`)?.classList.remove('current');
+  currentWordIndex++;
+  currentCharIndex = 0;
+  document.getElementById(`word-${currentWordIndex}`)?.classList.add('current');
+  document.querySelectorAll('.char.cursor').forEach(e=>e.classList.remove('cursor'));
+  document.getElementById(`c-${currentWordIndex}-0`)?.classList.add('cursor');
+  hiddenInput.value='';
+}
+
+function startTest() {
+  if (started) return;
+  started = true;
+  document.getElementById('startMsg').style.display = 'none';
+  timer = setInterval(() => {
+    timeLeft--;
+    const m = Math.floor(timeLeft/60), s = timeLeft%60;
+    document.getElementById('timerDisplay').textContent = `${m}:${s.toString().padStart(2,'0')}`;
+    document.getElementById('progressBar').style.width = ((totalTime-timeLeft)/totalTime*100)+'%';
+    updateStats();
+    if (timeLeft <= 0) endTest();
+    if (timeLeft <= 30) document.getElementById('timerDisplay').style.color='var(--red)';
+  }, 1000);
+}
+
+function updateStats() {
+  const elapsed = Math.max((totalTime-timeLeft)/60, 0.016);
+  const wpm = Math.round(correctChars/5/elapsed);
+  const acc = totalChars>0?Math.round(correctChars/totalChars*100):100;
+  const target = lang==='english'?30:20;
+  document.getElementById('wpmDisplay').textContent = wpm||0;
+  document.getElementById('accDisplay').textContent = acc+'%';
+  document.getElementById('errDisplay').textContent = errors;
+  if (started) {
+    const passing = wpm >= target && acc >= 85;
+    document.getElementById('statusDisplay').textContent = passing ? '✅ Pass' : '❌ Below';
+    document.getElementById('statusDisplay').style.color = passing ? 'var(--teal)' : 'var(--red)';
+  }
+}
+
+function endTest() {
+  finished = true; clearInterval(timer);
+  const elapsed = totalTime/60;
+  const wpm = Math.round(correctChars/5/elapsed);
+  const acc = totalChars>0?Math.round(correctChars/totalChars*100):100;
+  const target = lang==='english'?30:20;
+  const passing = wpm>=target && acc>=85;
+  document.getElementById('resultWPM').textContent = wpm;
+  document.getElementById('resultAcc').textContent = acc+'%';
+  document.getElementById('resultErrors').textContent = errors;
+  document.getElementById('resultStatus').textContent = passing?'PASS':'FAIL';
+  document.getElementById('resultStatus').style.color = passing?'var(--teal)':'var(--red)';
+  const ratingEl = document.getElementById('resultRating');
+  if (passing) {
+    ratingEl.style.background = 'rgba(0,201,167,.1)';
+    ratingEl.style.border = '1px solid rgba(0,201,167,.2)';
+    ratingEl.style.color = 'var(--teal)';
+    ratingEl.textContent = `🎉 You passed the CPCT typing requirement! ${wpm} WPM with ${acc}% accuracy meets the ${target} WPM / 85% standard.`;
+  } else {
+    ratingEl.style.background = 'rgba(255,92,92,.08)';
+    ratingEl.style.border = '1px solid rgba(255,92,92,.2)';
+    ratingEl.style.color = 'var(--red)';
+    ratingEl.textContent = `Keep practising! You need ${target} WPM with 85%+ accuracy. You scored ${wpm} WPM / ${acc}% accuracy. Gap: ${Math.max(0,target-wpm)} WPM, ${Math.max(0,85-acc)}% accuracy.`;
+  }
+  setTimeout(() => document.getElementById('resultOverlay').classList.add('show'), 400);
+}
+
+function closeResult() { document.getElementById('resultOverlay').classList.remove('show'); }
+
+function resetTest() {
+  clearInterval(timer); started=false; finished=false;
+  currentWordIndex=0; currentCharIndex=0; correctChars=0; totalChars=0; errors=0;
+  timeLeft=totalTime;
+  const m=Math.floor(totalTime/60),s=totalTime%60;
+  document.getElementById('timerDisplay').textContent=`${m}:${s.toString().padStart(2,'0')}`;
+  document.getElementById('timerDisplay').style.color='var(--yellow)';
+  document.getElementById('wpmDisplay').textContent='0';
+  document.getElementById('accDisplay').textContent='100%';
+  document.getElementById('errDisplay').textContent='0';
+  document.getElementById('statusDisplay').textContent='—';
+  document.getElementById('statusDisplay').style.color='var(--muted2)';
+  document.getElementById('progressBar').style.width='0%';
+  document.getElementById('startMsg').style.display='block';
+  document.getElementById('typingBox').classList.remove('active');
+  hiddenInput.value=''; closeResult(); loadPassage();
+}
+
+function nextPassage() {
+  passageIndex = (passageIndex+1) % passages[lang].length;
+  resetTest();
+}
+
+function setTime(t,btn) { document.querySelectorAll('.time-btn').forEach(b=>b.classList.remove('on')); btn.classList.add('on'); totalTime=t; resetTest(); }
+
+loadPassage();
+</script>
+</body>
+</html>
